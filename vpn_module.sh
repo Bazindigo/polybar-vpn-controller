@@ -30,10 +30,10 @@
 ## [Set VPN commands]. Setup for Mullvad is done below.
 # The first three commands should have direct equivalents for most VPNs.
 # The relay_set command assumes <country_code> <city_code> will follow as arguments. See below.
-VPN_CONNECT="mullvad connect"
-VPN_DISCONNECT="mullvad disconnect"
-VPN_GET_STATUS="mullvad status"
-VPN_RELAY_SET_LOCATION="mullvad relay set location"
+VPN_CONNECT="nordvpn connect"
+VPN_DISCONNECT="nordvpn disconnect"
+VPN_GET_STATUS="nordvpn status"
+VPN_RELAY_SET_LOCATION="nordvpn d; nordvpn c"
 
 ## [Set VPN status parsing]
 # The first command cuts the status, which is compared to keywords below.
@@ -53,7 +53,7 @@ COLOR_DISCONNECTED="#f087bd"
 
 ## [Set 8 favorite VPN locations]
 # These are passed to your VPN as `$VPNCOMMAND_RELAY_SET_LOCATION <input>`.
-VPN_LOCATIONS=("us sea" "us chi" "us nyc" "us" "jp" "au" "fr" "br")
+VPN_LOCATIONS=("United_States Denver" "United_States Chicago" "United_States New_York" "United_States" "Japan" "Australia" "France" "Brazil")
 
 ## [Set optional rofi menu style]. `man rofi` for help on location params.
 icon_connect="⇋"
@@ -68,8 +68,8 @@ rofi_menu_name="ﱾ VPN"
 
 # Country codes, taken from `mullvad relay list`.
 # They ought to connect to your VPN's choice of server in the region.
-COUNTRIES=("Albania (al)" "Australia (au)" "Austria (at)" "Belgium (be)" "Brazil (br)" "Bulgaria (bg)" "Canada (ca)" "Czech Republic (cz)" "Denmark (dk)" "Finland (fi)" "France (fr)" "Germany (de)" "Greece (gr)" "Hong Kong (hk)" "Hungary (hu)" "Ireland (ie)" "Israel (il)" "Italy (it)" "Japan (jp)" "Latvia (lv)" "Luxembourg (lu)" "Moldova (md)" "Netherlands (nl)" "New Zealand (nz)" "Norway (no)" "Poland (pl)" "Romania (ro)" "Serbia (rs)" "Singapore (sg)" "Spain (es)" "Sweden (se)" "Switzerland (ch)" "UK (gb)" "United Arab Emirates (ae)" "USA (us)")
-COUNTRY_CODES=("al" "au" "at" "be" "br" "bg" "ca" "cz" "dk" "fi" "fr" "de" "gr" "hk" "hu" "ie" "il" "it" "jp" "lv" "lu" "md" "nl" "nz" "no" "pl" "ro" "rs" "sg" "es" "se" "ch" "gb" "ae" "us")
+COUNTRIES=("Albania (al)" "Argentina (ar)" "Australia (au)" "Austria (at)" "Belgium (be)" "Bosnia & Herzegovina (bih)" "Brazil (br)" "Bulgaria (bg)" "Canada (ca)" "Chile (cl)" "Costa Rica (cr)" "Croatia (hr)" "Cyprus (cy)" "Czech Republic (cz)" "Denmark (dk)" "Estonia (ee)" "Finland (fi)" "France (fr)" "Georgia (ge)" "Germany (de)" "Greece (gr)" "Hong Kong (hk)" "Hungary (hu)" "Iceland (is)" "Ireland (ie)" "Israel (il)" "Italy (it)" "Japan (jp)" "Latvia (lv)" "Lithuania (lt)" "Luxembourg (lu)" "Malaysia (my)" "Mexico (mx)" "Moldova (md)" "Netherlands (nl)" "New Zealand (nz)" "North Macedonia (mk)" "Norway (no)" "Poland (pl)" "Portugal (pt)" "Romania (ro)" "Serbia (rs)" "Singapore (sg)" "Slovakia (sk)" "Slovenia (si)" "South Africa (sa)" "South Korea (kr)" "Spain (es)" "Sweden (se)" "Switzerland (ch)" "Taiwan (tw)" "Thailand (th)" "Turkey (tr)" "Ukraine (ua)" "United Kingdom (gb)" "United States (us)" "Vietnam (vn)")
+COUNTRY_CODES=("Albania" "Argentina" "Australia" "Austria" "Belgium" "Bosnia_And_Herzegovina" "Brazil" "Bulgaria" "Canada" "Chile" "Costa_Rica" "Croatia" "Cyprus" "Czech_Republic" "Denmark" "Estonia" "Finland" "France" "Georgia" "Germany" "Greece" "Hong_Kong" "Hungary" "Iceland" "Ireland" "Israel" "Italy" "Japan" "Latvia" "Lithuania" "Luxembourg" "Malaysia" "Mexico" "Moldova" "Netherlands" "New_Zealand" "North_Macedonia" "Norway" "Poland" "Portugal" "Romania" "Serbia" "Singapore" "Slovakia" "Slovenia" "South_Africa" "Sout_Korea" "Spain" "Sweden" "Switzerland" "Taiwan" "Thailand" "Turkey" "Ukraine" "United_Kingdom" "United_States" "Vietnam")
 
 # Concatenate favorite and country arrays
 VPN_CODES=("${VPN_LOCATIONS[@]}")
@@ -175,6 +175,21 @@ vpn_location_menu() {
 			*"${VPN_LOCATIONS[40]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[40]}" ;;
 			*"${VPN_LOCATIONS[41]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[41]}" ;;
 			*"${VPN_LOCATIONS[42]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[42]}" ;;
+			*"${VPN_LOCATIONS[43]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[43]}" ;;
+			*"${VPN_LOCATIONS[44]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[44]}" ;;
+			*"${VPN_LOCATIONS[45]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[45]}" ;;
+			*"${VPN_LOCATIONS[46]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[46]}" ;;
+			*"${VPN_LOCATIONS[47]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[47]}" ;;
+			*"${VPN_LOCATIONS[48]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[48]}" ;;
+			*"${VPN_LOCATIONS[49]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[49]}" ;;
+			*"${VPN_LOCATIONS[50]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[50]}" ;;
+			*"${VPN_LOCATIONS[51]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[51]}" ;;
+			*"${VPN_LOCATIONS[52]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[52]}" ;;
+			*"${VPN_LOCATIONS[53]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[53]}" ;;
+			*"${VPN_LOCATIONS[54]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[54]}" ;;
+			*"${VPN_LOCATIONS[55]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[55]}" ;;
+			*"${VPN_LOCATIONS[56]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[56]}" ;;
+			*"${VPN_LOCATIONS[57]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[57]}" ;;
 	    esac
 
 	    if [ "$VPN_STATUS" = "$CONNECTED" ]; then
