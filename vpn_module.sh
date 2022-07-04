@@ -106,7 +106,7 @@ vpn_report() {
 	elif [ "$VPN_STATUS" = "$CONNECTING" ]; then
 		echo "%{F$COLOR_CONNECTING}$ICON_CONNECTING Connecting...%{F-}"
 	else
-		echo "%{F$COLOR_DISCONNECTED}$ICON_DISCONNECTED No VPN%{F-}"
+		echo "%{F$COLOR_DISCONNECTED}$ICON_DISCONNECTED VPN Disconnected%{F-}"
 	fi
 }
 
@@ -127,7 +127,7 @@ vpn_location_menu() {
 		## shellcheck throws errors here, but the globbing is intentional
 		# shellcheck disable=SC2086
 		MENU="$(rofi $rofi_location -sep "|" -dmenu -i -p "$rofi_menu_name" <<< \
-			" $icon_connect (dis)connect| $icon_fav ${VPN_LOCATIONS[0]}| $icon_fav ${VPN_LOCATIONS[1]}| $icon_fav ${VPN_LOCATIONS[2]}| $icon_fav ${VPN_LOCATIONS[3]}| $icon_fav ${VPN_LOCATIONS[4]}| $icon_fav ${VPN_LOCATIONS[5]}| $icon_fav ${VPN_LOCATIONS[6]}| $icon_fav ${VPN_LOCATIONS[7]}| $icon_country ${VPN_LOCATIONS[8]}| $icon_country ${VPN_LOCATIONS[9]}| $icon_country ${VPN_LOCATIONS[10]}| $icon_country ${VPN_LOCATIONS[11]}| $icon_country ${VPN_LOCATIONS[12]}| $icon_country ${VPN_LOCATIONS[13]}| $icon_country ${VPN_LOCATIONS[14]}| $icon_country ${VPN_LOCATIONS[15]}| $icon_country ${VPN_LOCATIONS[16]}| $icon_country ${VPN_LOCATIONS[17]}| $icon_country ${VPN_LOCATIONS[18]}| $icon_country ${VPN_LOCATIONS[19]}| $icon_country ${VPN_LOCATIONS[20]}| $icon_country ${VPN_LOCATIONS[21]}| $icon_country ${VPN_LOCATIONS[22]}| $icon_country ${VPN_LOCATIONS[23]}| $icon_country ${VPN_LOCATIONS[24]}| $icon_country ${VPN_LOCATIONS[25]}| $icon_country ${VPN_LOCATIONS[26]}| $icon_country ${VPN_LOCATIONS[27]}| $icon_country ${VPN_LOCATIONS[28]}| $icon_country ${VPN_LOCATIONS[29]}| $icon_country ${VPN_LOCATIONS[30]}| $icon_country ${VPN_LOCATIONS[31]}| $icon_country ${VPN_LOCATIONS[32]}| $icon_country ${VPN_LOCATIONS[33]}| $icon_country ${VPN_LOCATIONS[34]}| $icon_country ${VPN_LOCATIONS[35]}| $icon_country ${VPN_LOCATIONS[36]}| $icon_country ${VPN_LOCATIONS[37]}| $icon_country ${VPN_LOCATIONS[38]}| $icon_country ${VPN_LOCATIONS[39]}| $icon_country ${VPN_LOCATIONS[40]}| $icon_country ${VPN_LOCATIONS[41]}| $icon_country ${VPN_LOCATIONS[42]}| $icon_country ${VPN_LOCATIONS[43]}")"
+			" $icon_connect (dis)connect| $icon_fav ${VPN_LOCATIONS[0]}| $icon_fav ${VPN_LOCATIONS[1]}| $icon_fav ${VPN_LOCATIONS[2]}| $icon_fav ${VPN_LOCATIONS[3]}| $icon_fav ${VPN_LOCATIONS[4]}| $icon_fav ${VPN_LOCATIONS[5]}| $icon_fav ${VPN_LOCATIONS[6]}| $icon_fav ${VPN_LOCATIONS[7]}| $icon_country ${VPN_LOCATIONS[8]}| $icon_country ${VPN_LOCATIONS[9]}| $icon_country ${VPN_LOCATIONS[10]}| $icon_country ${VPN_LOCATIONS[11]}| $icon_country ${VPN_LOCATIONS[12]}| $icon_country ${VPN_LOCATIONS[13]}| $icon_country ${VPN_LOCATIONS[14]}| $icon_country ${VPN_LOCATIONS[15]}| $icon_country ${VPN_LOCATIONS[16]}| $icon_country ${VPN_LOCATIONS[17]}| $icon_country ${VPN_LOCATIONS[18]}| $icon_country ${VPN_LOCATIONS[19]}| $icon_country ${VPN_LOCATIONS[20]}| $icon_country ${VPN_LOCATIONS[21]}| $icon_country ${VPN_LOCATIONS[22]}| $icon_country ${VPN_LOCATIONS[23]}| $icon_country ${VPN_LOCATIONS[24]}| $icon_country ${VPN_LOCATIONS[25]}| $icon_country ${VPN_LOCATIONS[26]}| $icon_country ${VPN_LOCATIONS[27]}| $icon_country ${VPN_LOCATIONS[28]}| $icon_country ${VPN_LOCATIONS[29]}| $icon_country ${VPN_LOCATIONS[30]}| $icon_country ${VPN_LOCATIONS[31]}| $icon_country ${VPN_LOCATIONS[32]}| $icon_country ${VPN_LOCATIONS[33]}| $icon_country ${VPN_LOCATIONS[34]}| $icon_country ${VPN_LOCATIONS[35]}| $icon_country ${VPN_LOCATIONS[36]}| $icon_country ${VPN_LOCATIONS[37]}| $icon_country ${VPN_LOCATIONS[38]}| $icon_country ${VPN_LOCATIONS[39]}| $icon_country ${VPN_LOCATIONS[40]}| $icon_country ${VPN_LOCATIONS[41]}| $icon_country ${VPN_LOCATIONS[42]}| $icon_country ${VPN_LOCATIONS[43]}| $icon_country ${VPN_LOCATIONS[44]}| $icon_country ${VPN_LOCATIONS[45]}| $icon_country ${VPN_LOCATIONS[46]}| $icon_country ${VPN_LOCATIONS[47]}| $icon_country ${VPN_LOCATIONS[48]}| $icon_country ${VPN_LOCATIONS[49]}| $icon_country ${VPN_LOCATIONS[50]}| $icon_country ${VPN_LOCATIONS[51]}| $icon_country ${VPN_LOCATIONS[52]}| $icon_country ${VPN_LOCATIONS[53]}| $icon_country ${VPN_LOCATIONS[54]}| $icon_country ${VPN_LOCATIONS[55]}| $icon_country ${VPN_LOCATIONS[56]}| $icon_country ${VPN_LOCATIONS[57]}| $icon_country ${VPN_LOCATIONS[58]}| $icon_country ${VPN_LOCATIONS[59]}| $icon_country ${VPN_LOCATIONS[60]}| $icon_country ${VPN_LOCATIONS[61]}| $icon_country ${VPN_LOCATIONS[62]}| $icon_country ${VPN_LOCATIONS[63]}| $icon_country ${VPN_LOCATIONS[64]}")"
 
 		# shellcheck disable=SC2086
 	    case "$MENU" in
@@ -190,6 +190,13 @@ vpn_location_menu() {
 			*"${VPN_LOCATIONS[55]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[55]}" ;;
 			*"${VPN_LOCATIONS[56]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[56]}" ;;
 			*"${VPN_LOCATIONS[57]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[57]}" ;;
+			*"${VPN_LOCATIONS[58]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[58]}" ;;
+			*"${VPN_LOCATIONS[59]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[59]}" ;;
+			*"${VPN_LOCATIONS[60]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[60]}" ;;
+			*"${VPN_LOCATIONS[61]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[61]}" ;;
+			*"${VPN_LOCATIONS[62]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[62]}" ;;
+			*"${VPN_LOCATIONS[63]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[63]}" ;;
+			*"${VPN_LOCATIONS[64]}") $VPN_RELAY_SET_LOCATION "${VPN_CODES[64]}" ;;
 	    esac
 
 	    if [ "$VPN_STATUS" = "$CONNECTED" ]; then
